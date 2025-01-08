@@ -1,4 +1,4 @@
-from pathlib import Path
+from pathlib import
 
 import typer
 from torch.utils.data import Dataset
