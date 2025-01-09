@@ -1,5 +1,7 @@
 import torch
 import typer
+
+
 def normalize(images: torch.Tensor) -> torch.Tensor:
     """Normalize images."""
     return (images - images.mean()) / images.std()
@@ -29,6 +31,7 @@ def preprocess_data(raw_dir: str, processed_dir: str) -> None:
     torch.save(train_target, f"{processed_dir}/train_target.pt")
     torch.save(test_images, f"{processed_dir}/test_images.pt")
     torch.save(test_target, f"{processed_dir}/test_target.pt")
+
 
 def corrupt_mnist() -> tuple[torch.utils.data.Dataset, torch.utils.data.Dataset]:
     """Return train and test datasets for corrupt MNIST."""
